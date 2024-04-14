@@ -48,7 +48,7 @@ a:hover {
 }
 
 .logo:hover {
-    cursor: default;
+    cursor: pointer;
 }
 
 /* Hamburger Menu */
@@ -267,4 +267,14 @@ section {
 
 footer p {
     text-align: center;
+}
+
+#world-map-container{
+    display: flex; /* Use flexbox layout */
+    justify-content: center; 
+}
+
+#world-map {
+    width: 600px; 
+    height: 400px;
 }
