@@ -1,0 +1,49 @@
+{{ define "main" }}
+  <!-- Banner -->
+  {{ with .Params.banner }}
+    <section class="section pt-14">
+      <div class="container">
+        <div class="row justify-center">
+          <div class="lg:col-7 md:col-9 mb-8 text-center">
+            <h1 class="mb-4 text-h3 lg:text-h1">
+              {{ .title | markdownify }}
+            </h1>
+            <p class="mb-8">
+              {{ .content | markdownify }}
+            </p>
+            {{ with .button }}
+              {{ if .enable }}
+                <a
+                  class="btn btn-primary"
+                  href="{{ .link | absURL }}"
+                  {{ if strings.HasPrefix .link `http` }}
+                    target="_blank" rel="noopener"
+                  {{ end }}>
+                  {{ .label }}
+                  <i class="fa fa-arrow-right pl-2"></i>
+                </a>
+              {{ end }}
+            {{ end }}
+            <ul class="social-icons mt-6 flex justify-center space-x-4">
+              {{ range site.Data.social.main }}
+                <li>
+                  <a
+                    target="_blank"
+                    aria-label="{{ .name }}"
+                    rel="nofollow noopener"
+                    href="{{ .link | safeURL }}">
+                    <i class="{{ .icon }}"></i>
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+          </div>
+          <!-- <div class="col-12">
+            {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:w-80" "DisplayXL" "800x" ) }}
+          </div> -->
+        </div>
+      </div>
+    </section>
+  {{ end }}
+  <!-- /Banner -->
+{{ end }}

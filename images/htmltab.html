@@ -1,0 +1,5 @@
+{{ $tabTitle := .Get "title" }}
+{{ $tabContent := .Inner }}
+
+{{/* Call the original Hugoplate tab shortcode and pass the title */}}
+<!-- {{ shortcode "tab" (dict "title" $tabTitle "content" $tabContent | safeHTML) }} -->
