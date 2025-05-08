@@ -2,7 +2,7 @@
 # Banner
 banner:
   title: "Hello, Friend!"
-  content: "This is Dhruvil's digital home."
+  content: "<h5>This is Dhruvil's digital home.</h5> <br>Here you will find random things ranging from travel diaries, techinals, random thoughts and much more...<br><br>"
   image: "/images/profile.jpg"
   button:
     enable: false
